@@ -1,0 +1,80 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+.container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+h1 {
+    color: #e44d26; /* Tom de vermelho */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #e42626;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #d14020; /* Tom mais escuro de vermelho ao passar o mouse */
+}
+
+#mensagem {
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Adição da animação da LED colorida */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 10px rgba(236, 17, 17, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(228, 60, 38, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(236, 17, 17, 0.8);
+    }
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(253, 8, 220, 0.8);
+    animation: pulse 2s infinite;
+    pointer-events: none; /* Impede que a borda interfera com o clique no botão */
+}
+/* ... (o restante do seu código CSS) */
+
+#imagem {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
